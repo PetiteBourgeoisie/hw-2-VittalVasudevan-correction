@@ -1,0 +1,37 @@
+Ai_Documentation for HW#2
+Used ChatGPT for the following instances
+
+First instance:
+
+Input:
+
+I accidentlly created a tag without annotating it and want to delete it? Here is the command I entered:
+(main)jupyter-vittal-vasudevan---f62a747f[hw-2-VittalVasudevan]> git tag repo-basic
+(main)jupyter-vittal-vasudevan---f62a747f[hw-2-VittalVasudevan]> git tag -a repo-basic -m "Basic first step for Vittal's REPO set up with the L
+IGO data files"
+fatal: tag 'repo-basic' already exists
+(main)jupyter-vittal-vasudevan---f62a747f[hw-2-VittalVasudevan]> 
+
+Output: 
+
+Ah, got it 👍 — the error means you already created a tag called repo-basic (first command). When you tried to create an annotated tag with the same name, Git complained.
+
+You have a couple of options:
+
+1. Keep the existing lightweight tag
+
+If the lightweight tag (git tag repo-basic) is fine, just push it:
+
+git push origin repo-basic
+
+
+2. Replace it with an annotated tag (if you want cleaner metadata)
+
+If you’d prefer the annotated tag, first delete the lightweight one locally and on GitHub:
+
+# delete locally
+git tag -d repo-basic
+
+# delete on GitHub (remote)
+git push origin :refs/tags/repo-basic
+
